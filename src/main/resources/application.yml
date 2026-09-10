@@ -2,29 +2,26 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username:
-    password:
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
     protocol: smtp
     properties:
       mail:
         smtp:
-          socketFactory:
-            port: 465
-            class: javax.net.ssl.SSLSocketFactory
-            fallback: false
           auth: true
           starttls:
             enable: true
+            required: true
           connectiontimeout: 5000
           timeout: 3000
           writetimeout: 5000
 
   thymeleaf:
-    enable: true
+    enabled: true
 
 envio:
   email:
-    remetente:
+    remetente: ${EMAIL_USERNAME}
     nomeRemetente: 'Javanauta'
 
 server:
