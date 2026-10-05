@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class NotificacaoApplication {
 
 	public static void main(String[] args) {
-		Dotenv.configure().systemProperties().load();
+		Dotenv.configure().systemProperties().ignoreIfMissing().load();
 
 		SpringApplication.run(NotificacaoApplication.class, args);
 	}
